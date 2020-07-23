@@ -1,0 +1,43 @@
+#! /bin/zsh
+
+#echo "state=floating"
+# See man bspc but external_rules_command essentially receives 4 args
+# which are the following
+wid=$1
+class=$2
+instance=$3
+consequences=$4
+
+#Following if works
+#if [ "$class" = "Alacritty" ]
+#then
+#    echo "state=floating"
+#fi
+
+title = $(xtitle "$wid")
+# Following works with /bin/zsh (haven't tested with sh)
+#if [[ "$class" = *"Alacritty"* ]]
+#then
+#    echo "state=floating"
+#fi
+#Following works but using the title variable above doesn't for some reason
+#if [[ "$(xtitle "$wid")" = *"biskmatar"* ]]
+#then
+#    echo "state=floating"
+#fi
+
+# match to find android emulator and the dumbass window next to it (that allows you to power off and such) see wmctrl -lx for more details
+# Following works, at last!
+if [[ "$(xtitle "$wid")" = *"Emulator"* ]]
+then
+    echo "desktop="^4" state=floating"
+    #echo "state=floating"
+fi
+    
+# start all steam games on desktop quatro 
+# They have the format steam_app_<some_id> so for dark souls 3 it's steam_app_374320
+# Following works
+if [[ "$class" = "steam_app_"* ]]
+then
+    echo "desktop="^4""
+fi
