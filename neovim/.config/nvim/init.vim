@@ -5,9 +5,9 @@ set background=dark
 "set background=light
 
 "vim plug config
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 "Install fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 "Bracket operations
@@ -15,33 +15,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-sandwich'
 "Git wrapper
 Plug 'tpope/vim-fugitive'
-"Plug 'jreybert/vimagit'
-
-"deoplete
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-"deoplete source for ruby
-"Plug 'fishbullet/deoplete-ruby'
-"
-"deoplete source for python
-"Plug 'zchee/deoplete-jedi'
-
-"Syntax highlighting
-"Javascript
-"Plug 'othree/yajs.vim'
-
-
-"Typescript
-"Plug 'HerringtonDarkholme/yats.vim'
-
-"C/C++
-"Plug 'Shougo/deoplete-clangx'
-
-"???
-"Plug 'Shougo/neoinclude.vim'
-
-"C/C++
-"Plug 'JBakamovic/cxxd-vim'
 
 "Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -65,6 +38,8 @@ Plug 'mhinz/vim-janah'
 Plug 'dracula/vim', { 'as': 'dracula' }
 "Paper color 
 Plug 'NLKNguyen/papercolor-theme'
+"Night owl
+Plug 'haishanh/night-owl.vim'
 
 
 call plug#end()
@@ -78,6 +53,9 @@ let g:gruvbox_contrast_light='hard'
 
 " Onedark options
 let g:onedark_terminal_italics=1
+
+"Night owl options
+let g:lightline = { 'colorscheme': 'nightowl'}
 
 "Enable true colors (not sure if this works yet)
 if (has("termguicolors"))
@@ -104,10 +82,11 @@ let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 "let g:echodoc#enable_at_startup = 1
 "colorscheme gruvbox
 "colorscheme flatcolor
-colorscheme onedark
+"colorscheme onedark
 "colorscheme janah
 "colorscheme dracula
 "colorscheme PaperColor
+colorscheme night-owl
 
 
 "Global settings
