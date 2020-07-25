@@ -72,3 +72,4 @@ if [[ "$(hostname)" == "petalchaser" ]]; then
     firefox &
     alacritty -e tmux &
 fi
+dunstify "Kernel.org" "$(~/bin/get_latest_kernel_version.sh)" &
