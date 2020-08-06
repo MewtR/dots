@@ -68,7 +68,7 @@ bspc rule -a Screenkey manage=off
 
 # autostart some apps 
 if [[ "$(hostname)" == "petalchaser" ]]; then
-    standardnotes-desktop &
+    #standardnotes-desktop &
     firefox &
     alacritty -e tmux &
 fi
