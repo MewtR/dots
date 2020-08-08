@@ -37,8 +37,8 @@ if [[ "$(hostname)" == "petalchaser" ]]; then
 fi
 
 #Common
-bspc rule -a firefox -o desktop='^1' focus=off follow=off split_dir=north
-bspc rule -a Alacritty -o desktop='^1' focus=off split_dir=south
+bspc rule -a firefox -o desktop='^1' focus=off follow=off split_dir=north split_ratio=0.6
+bspc rule -a Alacritty -o desktop='^1' focus=off split_dir=south split_ratio=0.4
 # Find classnames for each application by using xprop and clicking on the application's window
 # Look for second string in WM_CLASS
 # My rules
