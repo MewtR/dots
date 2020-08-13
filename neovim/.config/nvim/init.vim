@@ -41,6 +41,8 @@ Plug 'NLKNguyen/papercolor-theme'
 "Night owl
 Plug 'haishanh/night-owl.vim'
 
+"Vim wiki
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -355,3 +357,9 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+
+"vimwiki config
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/wiki/', 'path_html': '~/Documents/vimwiki/html'}]
+
+"disabling some mappings to allow coc to do it's thing for tab completion
+let g:vimwiki_key_mappings = { 'table_mappings': 0 }
