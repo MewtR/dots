@@ -268,6 +268,7 @@ command! -bang -nargs=* Ag
 :inoremap {{ {}<esc>i
 :inoremap '' ''<esc>i
 :inoremap "" ""<esc>i
+:inoremap `` ``<esc>i
 "Should probably make this one FileType specific
 ":inoremap \|\| \|\|<esc>i
 
