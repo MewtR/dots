@@ -324,6 +324,8 @@ nmap  gy <Plug>(coc-type-definition)
 nmap  gi <Plug>(coc-implementation)
 nmap  gr <Plug>(coc-references)
 
+"highlight CocErrorHighlight ctermfg=Red 
+highlight CocErrorSign  ctermfg=Red guifg=#ff4d4d
 " Use tab for trigger completion with characters ahead and navigate.
 " " Use command ':verbose imap <tab>' to make sure tab is not mapped by other
 " plugin.
@@ -360,7 +362,9 @@ function! s:show_documentation()
 endfunction
 
 "vimwiki config
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki/wiki/', 'path_html': '~/Documents/vimwiki/html'}]
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/wiki/',
+            \ 'syntax': 'markdown', 'ext': '.md',
+            \ 'path_html': '~/Documents/vimwiki/html'}]
 
 "disabling some mappings to allow coc to do it's thing for tab completion
 let g:vimwiki_key_mappings = { 'table_mappings': 0 }
