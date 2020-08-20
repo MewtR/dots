@@ -30,8 +30,8 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/no-color.theme
 
 journal.info=off
-taskd.certificate=\/home\/llednar\/.task\/llednar.cert.pem
-taskd.key=\/home\/llednar\/.task\/llednar.key.pem
-taskd.ca=\/home\/llednar\/.task\/ca.cert.pem
+taskd.certificate=~\/.task\/llednar.cert.pem
+taskd.key=~\/.task\/llednar.key.pem
+taskd.ca=~\/.task\/ca.cert.pem
 taskd.server=maltramagic:48390
 taskd.credentials=Public\/llednar\/a5adb5cd-beeb-4075-ade1-bd9786a443dc
