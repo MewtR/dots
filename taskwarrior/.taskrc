@@ -37,3 +37,6 @@ taskd.server=maltramagic:48390
 taskd.credentials=Public\/llednar\/a5adb5cd-beeb-4075-ade1-bd9786a443dc
 nag=
 urgency.uda.priority.L.coefficient=-3
+urgency.uda.priority.annotations.coefficient=0
+urgency.age.coefficient=0
+confirmation=off
