@@ -40,3 +40,4 @@ urgency.uda.priority.L.coefficient=-3
 urgency.uda.priority.annotations.coefficient=0
 urgency.age.coefficient=0
 confirmation=off
+urgency.user.tag.backlog.coefficient=-6.0
