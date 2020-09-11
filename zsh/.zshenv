@@ -7,9 +7,8 @@
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 # }}} End configuration added by Zim install
 
-typeset -U PATH path
-path=("$path[@]" "$HOME/bin")
-export PATH
+# For Golang
+GOPATH=~/go
 
 export SUDO_EDITOR=nvim
 export VISUAL=nvim
@@ -18,3 +17,7 @@ export EDITOR=nvim
 export MAKEFLAGS="-j$(nproc)"
 #ignore .gitignore and include hidden files as well
 #export FZF_CTRL_T_COMMAND='ag -U --hidden --ignore .git -g ""'
+#
+typeset -U PATH path
+path=("$path[@]" "$HOME/bin" "$GOPATH/bin")
+export PATH
