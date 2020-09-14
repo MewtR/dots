@@ -41,6 +41,7 @@ bspc rule -a firefox -o desktop='^1' focus=off follow=off split_dir=north split_
 bspc rule -a Alacritty -o desktop='^1' focus=off split_dir=south split_ratio=0.4
 bspc rule -a vlc desktop='^2' focus=off 
 bspc rule -a Skype desktop='^2' focus=off 
+bspc rule -a zoom desktop='^2' focus=off 
 # Find classnames for each application by using xprop and clicking on the application's window
 # Look for second string in WM_CLASS
 # My rules
