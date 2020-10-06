@@ -10,7 +10,7 @@ fi
 
 if [[ "$(hostname)" == "petalchaser" ]]; then
     bspc monitor DisplayPort-0 -d I II III IV V VI VII VIII
-    bspc monitor eDP -d IX X
+    bspc monitor eDP -d IX X XI XII
     
     # Order monitors according to where I want workspaces to be
     bspc wm -O DisplayPort-0 eDP
