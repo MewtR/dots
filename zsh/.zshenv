@@ -14,7 +14,7 @@ export SUDO_EDITOR=nvim
 export VISUAL=nvim
 export EDITOR=nvim
 #Use all 4 threads when building
-export MAKEFLAGS="-j$(nproc)"
+#export MAKEFLAGS="-j$(nproc)"
 #ignore .gitignore and include hidden files as well
 #export FZF_CTRL_T_COMMAND='ag -U --hidden --ignore .git -g ""'
 #
