@@ -79,7 +79,7 @@ fi
 # autostart some apps 
 firefox &
 if [[ "$(hostname)" == "petalchaser" ]]; then
-    alacritty -o font.size=16.0 -e tmux &
+    alacritty -o font.size=14.0 -e tmux &
 else
     alacritty -e tmux &
 fi
