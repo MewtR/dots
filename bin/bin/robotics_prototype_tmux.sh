@@ -1,11 +1,11 @@
 #! /bin/zsh
 
 run () {
-tmux split-window -h
+tmux split-window -h -c '#{pane_current_path}'
 tmux selectp -t 2
-tmux split-window -v
+tmux split-window -v -c '#{pane_current_path}'
 tmux selectp -t 1
-tmux split-window -v
+tmux split-window -v -c '#{pane_current_path}'
 tmux selectp -t 1
 tmux send-keys "roscore" Enter
 tmux selectp -t 4
@@ -17,9 +17,12 @@ tmux send-keys "source ~/Documents/pyvenvs/robotics-prototype/bin/activate && so
 }
 
 if [[ -z "$TMUX" ]]; then
-    # doesn't work 
-    tmux new -c ~/Programming/SpaceConcordia/robotics-prototype 
-    run
-else
-    run
+    tmux new -c ~/Programming/SpaceConcordia/robotics-prototype -d
+    x=1
+fi
+
+run
+
+if [[ -n "$x" ]]; then
+    tmux -2 attach-session -d
 fi
