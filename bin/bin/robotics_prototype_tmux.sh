@@ -21,6 +21,10 @@ if [[ -z "$TMUX" ]]; then
     x=1
 fi
 
+if [[ "$PWD" != "~/Programming/SpaceConcordia/robotics-prototype" && -z "$x" ]]; then
+    cd ~/Programming/SpaceConcordia/robotics-prototype
+fi
+
 run
 
 if [[ -n "$x" ]]; then
