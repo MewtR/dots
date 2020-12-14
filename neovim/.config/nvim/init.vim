@@ -115,6 +115,8 @@ set undodir=~/.config/nvim/undo
 ":au VimLeave * set guicursor=a:hor50-blinkwait700-blinkoff400-blinkon250
 "block curosr 
 ":au VimLeave * set guicursor=a:block-blinkwait700-blinkoff400-blinkon250
+"beam cursor
+":au VimLeave * set guicursor=a:ver10-blinkwait700-blinkoff400-blinkon250
 
 "Save cursor position
 augroup resCur
