@@ -105,12 +105,14 @@ set numberwidth=1
 set path+=**
 set virtualedit=onemore
 set completeopt-=preview " disable ugly ass preview window
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.config/nvim/undo
 
 "Cursor options
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 "Correct cursor shapre on when exiting neovim
 "horizontal curosr (underline)
-:au VimLeave * set guicursor=a:hor50-blinkwait700-blinkoff400-blinkon250
+":au VimLeave * set guicursor=a:hor50-blinkwait700-blinkoff400-blinkon250
 "block curosr 
 ":au VimLeave * set guicursor=a:block-blinkwait700-blinkoff400-blinkon250
 
