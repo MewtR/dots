@@ -35,6 +35,7 @@ fi
 #exec startxfce4
 export WINIT_X11_SCALE_FACTOR=1 # Workaround for dpi scaling bug (for alacritty) 
 ~/.fehbg &
+# following line won't work for externally plugged keyboards use xserverrc instead
 xset r rate 200 30 # For tmux so that you can "hold" down keys and it works
 dunst &
 exec bspwm
