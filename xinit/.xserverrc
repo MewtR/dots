@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Better way to set typematic delay and rate
+exec /usr/bin/Xorg -ardelay 200 -arinterval 30 -nolisten tcp "$@"
