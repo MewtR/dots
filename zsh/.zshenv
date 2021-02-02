@@ -19,5 +19,5 @@ export EDITOR=nvim
 #export FZF_CTRL_T_COMMAND='ag -U --hidden --ignore .git -g ""'
 #
 typeset -U PATH path
-path=("$path[@]" "$HOME/bin" "$GOPATH/bin")
+path=("$path[@]" "$HOME/bin" "$GOPATH/bin" "$HOME/arduino-1.8.12/hardware/tools/avr/bin")
 export PATH
