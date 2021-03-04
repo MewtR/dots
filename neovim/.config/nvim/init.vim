@@ -106,8 +106,10 @@ set path+=**
 set virtualedit=onemore
 set completeopt-=preview " disable ugly ass preview window
 " Enable persistent undo so that undo history persists across vim sessions
-set undofile
-set undodir=~/.config/nvim/undo
+" Problem with this is that if you open a file you haven't edited in a while
+" and hit 'u' it undoes a change
+" set undofile
+" set undodir=~/.config/nvim/undo
 
 "Cursor options
 "Correct cursor shapre on when exiting neovim
