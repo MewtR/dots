@@ -1,7 +1,7 @@
 #! /bin/zsh
 
 sxhkd &
-wmname LG3D &
+#wmname LG3D &
 if [[ "$(hostname)" == "petalchaser" ]]; then
     $HOME/.config/polybar/launch.sh
 else
@@ -68,6 +68,7 @@ if [[ "$(hostname)" == "biskmatar" ]]; then
     bspc rule -a jetbrains-studio desktop='^3' follow=off focus=on
     bspc rule -a Standard\ Notes desktop='^2' follow=off focus=on
     bspc rule -a burp-StartBurp desktop='^3' follow=off focus=on
+    bspc rule -a UE4Editor desktop='^2' follow=off focus=off 
 fi
 
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
