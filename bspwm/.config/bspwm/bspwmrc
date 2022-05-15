@@ -54,8 +54,7 @@ bspc rule -a Droidcam state=pseudo_tiled
 # Look for second string in WM_CLASS
 # My rules
 if [[ "$(hostname)" == "petalchaser" ]]; then
-    bspc rule -a Standard\ Notes -o desktop='^9' focus=off follow=off 
-    bspc rule -a Steam monitor=DisplayPort-0 state=fullscreen
+    bspc rule -a Steam monitor=DisplayPort-0 follow=off focus=off
 fi
 
 # External rule for android emulator
