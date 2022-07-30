@@ -142,4 +142,5 @@ alias vi='/bin/vim'
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-#source /opt/ros/melodic/setup.zsh
+# Vi mode
+bindkey -v
