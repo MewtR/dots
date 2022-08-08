@@ -132,6 +132,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 #aliases
 alias vim='nvim'
 alias vi='/bin/vim'
+alias cat='/usr/bin/bat'
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/fzf/key-bindings.zsh
