@@ -25,6 +25,9 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 "Sxhkd config file syntax
 Plug 'kovetskiy/sxhkd-vim'
 
+"kotling syntax highlighting
+Plug 'udalov/kotlin-vim'
+
 "Themes
 "gruvbox theme
 Plug 'morhetz/gruvbox'
