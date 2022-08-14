@@ -22,5 +22,5 @@ export MAKEFLAGS="-j$(nproc)"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 typeset -U PATH path
-path=("$path[@]" "$HOME/bin" "$GOPATH/bin")
+path=("/usr/bin" "$path[@]" "$HOME/bin" "$GOPATH/bin")
 export PATH
