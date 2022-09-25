@@ -10,4 +10,10 @@ return require("packer").startup(function()
 
     -- Colorschemes section
     use ("folke/tokyonight.nvim")
+
+    -- telescope
+    use{
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 end)
