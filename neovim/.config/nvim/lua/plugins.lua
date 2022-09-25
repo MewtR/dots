@@ -4,8 +4,10 @@ return require("packer").startup(function()
 
     use {
     'nvim-lualine/lualine.nvim',
-    config = function() require 'statusline/evil_lualine' end,
+    config = function() require 'plugins/evil_lualine' end,
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- Colorschemes section
+    use ("folke/tokyonight.nvim")
 end)
