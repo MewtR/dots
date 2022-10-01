@@ -39,9 +39,8 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    theme = 'tokyonight', --Use tokyonight
-    theme = 'papercolor_light',
-    --[[
+    --theme = 'tokyonight', --Use tokyonight
+    --theme = 'papercolor_light',
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -49,7 +48,6 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
-    ]]--
   },
   sections = {
     -- these are to remove the defaults
@@ -62,13 +60,12 @@ local config = {
     lualine_x = {},
   },
   inactive_sections = {
-    -- these are to remove the defaults
-    lualine_a = {},
+    lualine_a = {'filename'},
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
-    lualine_c = {},
-    lualine_x = {},
+    lualine_c = {'%f %y %m'},
+    lualine_x = {'location'},
   },
 }
 
