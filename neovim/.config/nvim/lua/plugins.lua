@@ -16,4 +16,7 @@ return require("packer").startup(function()
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+
+    -- vimwiki
+    use("vimwiki/vimwiki")
 end)
