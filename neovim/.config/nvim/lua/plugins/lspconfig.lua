@@ -37,7 +37,9 @@ require('lspconfig')['kotlin_language_server'].setup{
     on_attach = on_attach,
     -- Server-specific settings...
     settings = {
-      ["kotlin_language_server"] = {}
+      ["kotlin_language_server"] = {
+          cmd = 'systemd-run --scope -p MemoryMax=500M -p CPUQuota=10% kotlin_language_server' -- doesn't really work
+      }
     }
 }
 --]]
