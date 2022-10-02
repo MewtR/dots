@@ -25,4 +25,10 @@ return require("packer").startup(function()
 
     -- vimwiki
     use("vimwiki/vimwiki")
+
+    -- lsp
+    use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+
+    -- kotlin
+    use 'udalov/kotlin-vim'
 end)
