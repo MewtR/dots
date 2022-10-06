@@ -40,7 +40,10 @@ local config = {
     component_separators = '',
     section_separators = '',
     --theme = 'tokyonight', --Use tokyonight
+    --theme = 'iceberg_light',
+    theme = 'horizon',
     --theme = 'papercolor_light',
+    --[[
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -48,6 +51,7 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
+    --]]
   },
   sections = {
     -- these are to remove the defaults
