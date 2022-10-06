@@ -31,4 +31,10 @@ return require("packer").startup(function()
 
     -- kotlin
     use 'udalov/kotlin-vim'
+
+    -- vim sandwich
+    use {
+        'machakann/vim-sandwich',
+        config = 'vim.cmd "let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)"'
+    }
 end)
