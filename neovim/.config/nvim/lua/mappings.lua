@@ -45,3 +45,6 @@ inoremap("{{", "{}<esc>i")
 inoremap("''", "''<esc>i")
 inoremap("\"\"", "\"\"<esc>i")
 inoremap("``", "``<esc>i")
+
+--Uppercase in insert mode
+inoremap("<C-u>", "<esc>gUiwea")
