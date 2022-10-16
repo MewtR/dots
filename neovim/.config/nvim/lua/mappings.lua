@@ -3,6 +3,9 @@ local Remap = require('keymap')
 vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
+local home = os.getenv("HOME")
+local dots = home .. "/dots"
+local nvimdots = dots .. "/neovim/.config/nvim"
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
@@ -10,8 +13,12 @@ local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
 --Edit/Source my config file
-nnoremap("<leader>ev", ":vsplit $MYVIMRC<CR>")
+-- See :help expand for where I got the '%:h' from
+--nnoremap("<leader>ev", ":vsplit $MYVIMRC<CR>:lcd %:h<CR>")
+nnoremap("<leader>ev", ":vsplit $MYVIMRC<CR>:lcd " .. nvimdots .. "<CR>")
 nnoremap("<leader>sv", ":source $MYVIMRC<CR>")
+--Edit dots
+nnoremap("<leader>ed", ":vsplit " .. dots .. "<CR>:lcd %<CR>")
 
 --Switching between windows
 nnoremap("<leader>h", "<c-w>h")
@@ -33,6 +40,9 @@ nnoremap("<M-h>", "<C-w><")
 nnoremap("<M-j>", "<C-w>+")
 nnoremap("<M-k>", "<C-w>-")
 nnoremap("<M-l>", "<C-w>>")
+
+--cd to the directory in which the current file is being edited
+--nnoremap("<leader>cd", ":lcd %:h<CR>")
 
 --jk to esc insert mode
 inoremap("jk", "<esc>")
