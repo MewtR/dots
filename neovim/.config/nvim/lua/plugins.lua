@@ -37,4 +37,7 @@ return require("packer").startup(function()
         'machakann/vim-sandwich',
         config = 'vim.cmd "let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)"'
     }
+
+    --fzf.vim (fzf installed through arch repos)
+    use { 'junegunn/fzf.vim' }
 end)
