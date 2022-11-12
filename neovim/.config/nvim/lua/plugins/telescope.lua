@@ -1,8 +1,8 @@
 local Remap = require('keymap')
 local nnoremap = Remap.nnoremap
-nnoremap("<leader>sf",  "<cmd>Telescope find_files<cr>")
-nnoremap("<leader>sa", "<cmd>Telescope live_grep<cr>")
-nnoremap("<leader>sb",  "<cmd>Telescope buffers<cr>")
+nnoremap("<leader>f",  "<cmd>Telescope find_files<cr>")
+nnoremap("<leader>a", "<cmd>Telescope live_grep<cr>")
+nnoremap("<leader>b",  "<cmd>Telescope buffers<cr>")
 nnoremap("<leader>sh", "<cmd>Telescope help_tags<cr>")
 
 local actions = require "telescope.actions"
