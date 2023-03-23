@@ -38,7 +38,7 @@ fi
 
 if [[ "$(hostname)" == "petalchaser" ]]; then
     bspc rule -a firefox -o desktop='^1' focus=off follow=off
-    bspc rule -a Alacritty -o desktop='^9' focus=off 
+    bspc rule -a Alacritty -o desktop='^2' focus=off
 else
     bspc rule -a firefox -o desktop='^1' focus=off follow=off
     bspc rule -a Alacritty -o desktop='^2' focus=off
