@@ -47,7 +47,19 @@ Plug 'haishanh/night-owl.vim'
 "Vim wiki
 Plug 'vimwiki/vimwiki'
 
+" Tmp
+Plug 'svban/YankAssassin.vim'
+
+Plug 'numToStr/Comment.nvim'
+
 call plug#end()
+
+lua << EOF
+local config = {
+    sticky = false,
+    }
+require('Comment').setup(config)
+EOF
 
 "deoplete at startup
 "let g:deoplete#enable_at_startup = 1
@@ -86,12 +98,13 @@ let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 "echodoc
 "let g:echodoc#enable_at_startup = 1
 "colorscheme gruvbox
-"colorscheme flatcolor
+colorscheme flatcolor
 "colorscheme onedark
 "colorscheme janah
 "colorscheme dracula
 "colorscheme PaperColor
-colorscheme night-owl
+"colorscheme night-owl
+"colorscheme cyberpunk-neon
 
 
 "Global settings
@@ -121,7 +134,7 @@ set completeopt-=preview " disable ugly ass preview window
 "block curosr 
 ":au VimLeave * set guicursor=a:block-blinkwait700-blinkoff400-blinkon250
 "beam cursor
-":au VimLeave * set guicursor=a:ver10-blinkwait700-blinkoff400-blinkon250
+:au VimLeave * set guicursor=a:ver10-blinkwait700-blinkoff400-blinkon250
 
 "Save cursor position
 augroup resCur
