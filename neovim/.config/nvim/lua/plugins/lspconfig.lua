@@ -96,3 +96,8 @@ lspconfig.clangd.setup{
 require'lspconfig'.bashls.setup{
     capabilities = capabilities,
 }
+
+-- lua
+lspconfig.lua_ls.setup{
+    capabilities = capabilities,
+}
