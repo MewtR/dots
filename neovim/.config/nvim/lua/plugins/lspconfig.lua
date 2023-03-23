@@ -34,21 +34,65 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local util = require('lspconfig.util')
--- cool but too resource intensive.
---[[
-require('lspconfig')['kotlin_language_server'].setup{
-    on_attach = on_attach,
-    -- Server-specific settings...
-    settings = {
-      ["kotlin_language_server"] = {
-          cmd = 'systemd-run --scope -p MemoryMax=500M -p CPUQuota=10% kotlin_language_server' -- doesn't really work
-      }
-    }
+local lspconfig = require('lspconfig')
+-- luasnip setup
+local luasnip = require 'luasnip'
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+    -- C-b (back) C-f (forward) for snippet placeholder navigation.
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
 }
---]]
+
+-- Setup language servers.
 
 -- C/C++
--- Setup language servers.
-local lspconfig = require('lspconfig')
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup{
+    capabilities = capabilities,
+}
+
+-- Bash lsp
+-- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls and https://github.com/bash-lsp/bash-language-server#neovim
+-- But shellcheck pulls in a ton of haskell deps.
+require'lspconfig'.bashls.setup{
+    capabilities = capabilities,
+}
