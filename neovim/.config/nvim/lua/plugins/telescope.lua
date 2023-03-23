@@ -36,6 +36,6 @@ require('telescope').setup({
             find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
         }
     },
-}) 
+})
 
 require('telescope').load_extension('fzf')
