@@ -93,9 +93,11 @@ lspconfig.clangd.setup{
 -- Bash lsp
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls and https://github.com/bash-lsp/bash-language-server#neovim
 -- But shellcheck pulls in a ton of haskell deps.
+--[[
 require'lspconfig'.bashls.setup{
     capabilities = capabilities,
 }
+--]]
 
 -- lua
 lspconfig.lua_ls.setup{
