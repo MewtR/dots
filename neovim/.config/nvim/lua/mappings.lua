@@ -58,3 +58,30 @@ inoremap("``", "``<esc>i")
 
 --Uppercase in insert mode
 inoremap("<C-u>", "<esc>gUiwea")
+
+-- Quickfix tomfoolery
+
+-- no idea what the point of the group is, should probably learn it.
+local group = vim.api.nvim_create_augroup("QuickFix", {clear = true})
+
+-- map j to view error from the quicklist, but immediately switch back to the
+-- quicklist window.
+vim.api.nvim_create_autocmd("FileType",
+{ pattern = "qf",
+callback = function() vim.keymap.set("n", "j", ":cn<cr><c-w><c-p>", {buffer = true} ) end,
+group = group
+})
+
+-- map k to previous item in quicklist, switch back to the window.
+vim.api.nvim_create_autocmd("FileType",
+{ pattern = "qf",
+callback = function() vim.keymap.set("n", "k", ":cp<cr><c-w><c-p>", {buffer = true} ) end,
+group = group
+})
+
+-- map Enter to close the quickfix window, "select" the current item.
+vim.api.nvim_create_autocmd("FileType",
+{ pattern = "qf",
+callback = function() vim.keymap.set("n", "<cr>", ":ccl<cr>", {buffer = true} ) end,
+group = group
+})
