@@ -82,6 +82,6 @@ group = group
 -- map Enter to close the quickfix window, "select" the current item.
 vim.api.nvim_create_autocmd("FileType",
 { pattern = "qf",
-callback = function() vim.keymap.set("n", "<cr>", ":ccl<cr>", {buffer = true} ) end,
+callback = function() vim.keymap.set("n", "<cr>", ":ccl<cr><c-w><c-p>", {buffer = true} ) end,
 group = group
 })
