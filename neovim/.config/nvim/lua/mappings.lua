@@ -85,3 +85,8 @@ vim.api.nvim_create_autocmd("FileType",
 callback = function() vim.keymap.set("n", "<cr>", ":ccl<cr><c-w><c-p>", {buffer = true} ) end,
 group = group
 })
+
+-- Grep for word under the cursor, then open the quickfixlist
+-- 'silent' to not open the default pager like interface
+-- '!' after the grep to not jump to first match.
+vim.keymap.set("n", "<leader>g", ':silent grep! -srnwI --exclude-dir=.git --exclude=tags . -e "<cword>"<cr> :cw<cr>', { noremap = true })
