@@ -59,6 +59,9 @@ inoremap("``", "``<esc>i")
 --Uppercase in insert mode
 inoremap("<C-u>", "<esc>gUiwea")
 
+-- Enter to add a newline in normal mode
+vim.keymap.set("n", "<cr>", 'o<esc>', { noremap = true })
+
 -- Quickfix tomfoolery
 
 -- no idea what the point of the group is, should probably learn it.
