@@ -93,3 +93,6 @@ group = group
 -- 'silent' to not open the default pager like interface
 -- '!' after the grep to not jump to first match.
 vim.keymap.set("n", "<leader>g", ':silent grep! -srnwI --exclude-dir=.git --exclude=tags . -e "<cword>"<cr> :cw<cr>', { noremap = true })
+
+-- Simple mapping to search for a whole word
+vim.keymap.set("n", "<leader>/", '/\\v<><Left>', { noremap = true })

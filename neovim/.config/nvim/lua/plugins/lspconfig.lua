@@ -100,6 +100,13 @@ require'lspconfig'.bashls.setup{
 --]]
 
 -- lua
+-- sudo pacman -S lua-language-server
 lspconfig.lua_ls.setup{
+    capabilities = capabilities,
+}
+
+-- python
+-- sudo pacman -S pyright
+lspconfig.pyright.setup{
     capabilities = capabilities,
 }
