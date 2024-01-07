@@ -36,7 +36,7 @@ require("lazy").setup({
     { 'hrsh7th/cmp-nvim-lsp' }, -- LSP source for nvim-cmp
     { 'saadparwaiz1/cmp_luasnip' }, -- Snippets source for nvim-cmp
     { 'L3MON4D3/LuaSnip' }, -- Snippets plugin
-
+    { 'hrsh7th/cmp-buffer' }, -- LSP source for nvim-cmp
 })
 --[[
 return require("packer").startup(function(use)
