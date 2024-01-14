@@ -1,0 +1,2 @@
+# For programs that use readline like gdb.
+set editing-mode vi
