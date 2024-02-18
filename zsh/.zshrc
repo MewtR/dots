@@ -153,3 +153,4 @@ source /usr/share/fzf/completion.zsh
 #Vi Mode
 bindkey -v
 bindkey "^?" backward-delete-char # Fix for backspace not working sometimes
+export SYSTEMD_LESS=FRXMK journalctl
