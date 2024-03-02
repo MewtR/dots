@@ -13,6 +13,7 @@ vim.opt.shortmess = vim.opt.shortmess + "c"
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 2
 vim.opt.scrolloff = 5
+vim.opt.smartcase = true
 
 -- Cursor options
 cursors = {
