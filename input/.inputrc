@@ -1,2 +1,5 @@
 # For programs that use readline like gdb.
 #set editing-mode vi # Nevermind, it messes up the keybind to enter tui mode.
+$if Gdb
+    "\C-xa": "tui-split-toggle\r"
+$endif
