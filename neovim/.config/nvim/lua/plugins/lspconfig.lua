@@ -111,3 +111,9 @@ lspconfig.lua_ls.setup{
 lspconfig.pyright.setup{
     capabilities = capabilities,
 }
+
+-- go
+-- sudo pacman -S gopls
+lspconfig.gopls.setup{
+    capabilities = capabilities,
+}
