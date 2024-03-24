@@ -49,6 +49,7 @@ bspc rule -a Skype desktop='^2' focus=off
 bspc rule -a VirtualBox\ Manager desktop='^3' focus=off 
 bspc rule -a VirtualBox\ Machine desktop='^2' focus=off # <- doesn't work for some reason
 bspc rule -a gazebo desktop='^2' focus=off 
+bspc rule -a discord desktop='^3' focus=off
 bspc rule -a Droidcam state=pseudo_tiled
 # Find classnames for each application by using xprop and clicking on the application's window
 # Look for second string in WM_CLASS
