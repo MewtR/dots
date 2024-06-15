@@ -92,7 +92,14 @@ group = group
 -- Grep for word under the cursor, then open the quickfixlist
 -- 'silent' to not open the default pager like interface
 -- '!' after the grep to not jump to first match.
-vim.keymap.set("n", "<leader>g", ':silent grep! -srnwI --exclude-dir=.git --exclude=tags . -e "<cword>"<cr> :cw<cr>', { noremap = true })
+--
+-- Following for grep
+-- vim.keymap.set("n", "<leader>g", ':silent grep! -srnwI --exclude-dir=.git --exclude=tags . -e "<cword>"<cr> :cw<cr>', { noremap = true })
+
+-- Following for rg
+-- -s: case sensitive
+-- -w: whole word
+vim.keymap.set("n", "<leader>g", ':silent grep! -s -w --no-ignore --hidden --glob="!.git/*" --glob="!.cache/*" . -e "<cword>"<cr> :cw<cr>', { noremap = true })
 
 -- Simple mapping to search for a whole word
 vim.keymap.set("n", "<leader>/", '/\\v<><Left>', { noremap = true })
