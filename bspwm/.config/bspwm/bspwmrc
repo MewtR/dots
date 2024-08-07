@@ -55,7 +55,9 @@ bspc rule -a Droidcam state=pseudo_tiled
 # Look for second string in WM_CLASS
 # My rules
 if [[ "$(hostname)" == "petalchaser" ]]; then
-    bspc rule -a steam monitor=DisplayPort-0 follow=off focus=off
+    #bspc rule -a steam monitor=DisplayPort-0 follow=off focus=off
+    bspc rule -a steam desktop='^4' follow=off focus=off
+    bspc rule -a SDL\ Application desktop='^4' follow=off focus=off # this is the steam sign in dialog box
 fi
 
 # External rule for android emulator
@@ -65,6 +67,7 @@ bspc config external_rules_command ~/.config/bspwm/external_rules
 
 if [[ "$(hostname)" == "biskmatar" ]]; then
     bspc rule -a steam desktop='^4' follow=off focus=on
+    bspc rule -a SDL\ Application desktop='^4' follow=off focus=off # this is the steam sign in dialog box
     bspc rule -a jetbrains-studio desktop='^3' follow=off focus=on
     bspc rule -a Standard\ Notes desktop='^2' follow=off focus=on
     bspc rule -a burp-StartBurp desktop='^3' follow=off focus=on
