@@ -40,7 +40,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local util = require('lspconfig.util')
 local lspconfig = require('lspconfig')
 -- luasnip setup
-local luasnip = require 'luasnip'
+local luasnip = require('luasnip')
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
@@ -54,12 +54,10 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
     -- C-b (back) C-f (forward) for snippet placeholder navigation.
     ['<C-Space>'] = cmp.mapping.complete(),
---[[
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false, -- If nothing has been selected with tab, don't select it for me.
     },
-    --]]
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -82,9 +80,26 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'buffer' },
+    { name = 'buffer',
+        option = {
+            keyword_length = 4,
+            get_bufnrs = function()
+                local buf = vim.api.nvim_get_current_buf()
+                local byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
+                if byte_size > 1024 * 1024 then -- 1 Megabyte max
+                    return {}
+                end
+                return vim.api.nvim_list_bufs()
+            end
+        }
+    },
   },
 }
+
+-- This just makes it so nvim-cmp works with
+-- luasnip snippets. You don't have to reconfigure
+-- keys to select/tab through snippets
+require('cmp_luasnip')
 
 -- Setup language servers.
 

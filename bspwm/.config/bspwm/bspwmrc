@@ -37,10 +37,10 @@ if [[ "$(hostname)" == "petalchaser" ]]; then
 fi
 
 if [[ "$(hostname)" == "petalchaser" ]]; then
-    bspc rule -a firefox -o desktop='^1' focus=off follow=off
+    bspc rule -a icecat -o desktop='^1' focus=off follow=off
     bspc rule -a Alacritty -o desktop='^9' focus=off
 else
-    bspc rule -a firefox -o desktop='^1' focus=off follow=off
+    bspc rule -a icecat -o desktop='^1' focus=off follow=off
     bspc rule -a Alacritty -o desktop='^2' focus=off
 fi
 
@@ -61,7 +61,7 @@ if [[ "$(hostname)" == "petalchaser" ]]; then
 fi
 
 # External rule for android emulator
-bspc config external_rules_command ~/.config/bspwm/external_rules
+#bspc config external_rules_command ~/.config/bspwm/external_rules
 #following works
 #bspc config external_rules_command "$(which ~/.config/bspwm/external_rules)"
 
@@ -81,7 +81,7 @@ fi
 #bspc rule -a Screenkey manage=off
 
 # autostart some apps 
-firefox &
+icecat &
 alacritty -e tmux &
 
 dunstify "Kernel.org" "$(~/bin/get_latest_kernel_version.sh)" &

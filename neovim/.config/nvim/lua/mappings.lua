@@ -62,32 +62,6 @@ inoremap("<C-u>", "<esc>gUiwea")
 -- Enter to add a newline in normal mode
 vim.keymap.set("n", "<cr>", 'o<esc>', { noremap = true })
 
--- Quickfix tomfoolery
-
--- no idea what the point of the group is, should probably learn it.
-local group = vim.api.nvim_create_augroup("QuickFix", {clear = true})
-
--- map j to view error from the quicklist, but immediately switch back to the
--- quicklist window.
-vim.api.nvim_create_autocmd("FileType",
-{ pattern = "qf",
-callback = function() vim.keymap.set("n", "j", ":cn<cr><c-w><c-p>", {buffer = true} ) end,
-group = group
-})
-
--- map k to previous item in quicklist, switch back to the window.
-vim.api.nvim_create_autocmd("FileType",
-{ pattern = "qf",
-callback = function() vim.keymap.set("n", "k", ":cp<cr><c-w><c-p>", {buffer = true} ) end,
-group = group
-})
-
--- map Enter to close the quickfix window, "select" the current item.
-vim.api.nvim_create_autocmd("FileType",
-{ pattern = "qf",
-callback = function() vim.keymap.set("n", "<cr>", ":ccl<cr><c-w><c-p>", {buffer = true} ) end,
-group = group
-})
 
 -- Grep for word under the cursor, then open the quickfixlist
 -- 'silent' to not open the default pager like interface
