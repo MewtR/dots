@@ -37,8 +37,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local util = require('lspconfig.util')
-local lspconfig = require('lspconfig')
 -- luasnip setup
 local luasnip = require('luasnip')
 -- nvim-cmp setup
@@ -104,9 +102,10 @@ require('cmp_luasnip')
 -- Setup language servers.
 
 -- C/C++
-lspconfig.clangd.setup{
+vim.lsp.config('clangd', {
     capabilities = capabilities,
-}
+})
+vim.lsp.enable('clangd')
 
 -- Bash lsp
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls and https://github.com/bash-lsp/bash-language-server#neovim
@@ -119,18 +118,26 @@ require'lspconfig'.bashls.setup{
 
 -- lua
 -- sudo pacman -S lua-language-server
-lspconfig.lua_ls.setup{
+vim.lsp.config('lua_ls', {
     capabilities = capabilities,
-}
+})
+vim.lsp.enable('lua_ls')
 
 -- python
 -- sudo pacman -S pyright
-lspconfig.pyright.setup{
+vim.lsp.config('pyright', {
     capabilities = capabilities,
-}
+})
+vim.lsp.enable('pyright')
 
 -- go
 -- sudo pacman -S gopls
-lspconfig.gopls.setup{
+vim.lsp.config('gopls', {
     capabilities = capabilities,
-}
+})
+vim.lsp.enable('gopls')
+
+vim.lsp.config('kotlin_lsp', {
+    capabilities = capabilities,
+})
+-- vim.lsp.enable('kotlin_lsp')
