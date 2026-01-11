@@ -1,0 +1,22 @@
+# vim: filetype=neomuttrc
+
+# index
+bind index j next-entry
+bind index k previous-entry
+bind index g noop
+bind index $ noop
+bind index gg first-entry
+bind index G last-entry
+bind index S sync-mailbox
+
+# pager
+bind pager j next-line
+bind pager k previous-line
+unbind pager g
+bind pager gg top
+bind pager G bottom
+
+# browser
+unbind browser g
+bind browser gg top-page
+bind browser G bottom-page

@@ -1,0 +1,12 @@
+# vim: filetype=neomuttrc
+
+# https://neomutt.org/guide/reference.html#3-134-%C2%A0folder
+# Not sure why this is needed, since we whould change this every time we change accounts
+set folder=~/Documents/Mail
+#mailboxes -nonotify -nopoll $folder
+
+source ~/.config/neomutt/settings
+source ~/.config/neomutt/mappings
+
+# Accounts
+# source ~/.config/neomutt/accounts/main

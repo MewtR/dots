@@ -1,0 +1,31 @@
+# vim: filetype=neomuttrc
+
+set editor = "nvim"
+
+# Ensure TLS is enforced
+# STARTTLS is a way to upgrade a plain text connection to a secure one. As opposed to using a different
+# port
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# Caching
+# Should make opening neomutt with imap/pop servers faster
+set header_cache_backend = lmdb
+set header_cache = ~/.cache/neomutt
+set message_cache_dir = ~/.cache/neomutt
+set certificate_file = ~/.neomutt/certificates
+
+# Sorting
+set sort = reverse-last-date
+
+# Date
+set date_format = "%a %e %b %Y"
+set index_format = "%4C %Z %[%a %e %b %Y %H:%M] %-15.15L (%<l?%4l&%4c>) %s"
+
+# Can have the date in my local timezone here maybe
+# set pager_format = "-%Z- %C/%m: %-20.20n   %s%*  -- (%P)" # format of the status
+
+set tmp_dir = ~/tmp/neomutt
+
+# Check for all subscribed IMAP folders ( as if all were added with a mailboxes line)
+set imap_check_subscribed

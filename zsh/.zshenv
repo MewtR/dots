@@ -21,6 +21,13 @@ export EDITOR=nvim
 # For Android Studio
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# For mutt
+export GPG_TTY=$(tty)
+
+# Supposed to make journalctl pager lines wrap
+# but doesn't even seem to work
+export SYSTEMD_LESS=FRXMK
+
 typeset -U PATH path
 path=("/usr/bin" "$path[@]" "$HOME/bin" "$GOPATH/bin")
 export PATH
