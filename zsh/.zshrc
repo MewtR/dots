@@ -134,6 +134,7 @@ unset key
 alias vim='nvim'
 alias vi='/bin/vim'
 alias cat='/usr/bin/bat'
+alias mutt='/usr/bin/neomutt'
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/fzf/key-bindings.zsh
@@ -154,4 +155,3 @@ source /usr/share/fzf/completion.zsh
 #Vi Mode
 bindkey -v
 bindkey "^?" backward-delete-char # Fix for backspace not working sometimes
-export SYSTEMD_LESS=FRXMK journalctl
