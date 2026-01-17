@@ -131,6 +131,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 
 alias vim='nvim'
+alias mutt='neomutt'
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
