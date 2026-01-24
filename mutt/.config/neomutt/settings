@@ -29,3 +29,6 @@ set tmp_dir = ~/tmp/neomutt
 
 # Check for all subscribed IMAP folders ( as if all were added with a mailboxes line)
 set imap_check_subscribed
+
+# Don't add a '+' at the beginning of wrapped lines
+set markers = no
