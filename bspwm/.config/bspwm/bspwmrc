@@ -40,7 +40,7 @@ if [[ "$(hostname)" == "petalchaser" ]]; then
     bspc rule -a icecat -o desktop='^1' split_dir=west focus=off follow=off
     bspc rule -a Alacritty -o desktop='^1' split_dir=east focus=off
 else
-    bspc rule -a icecat -o desktop='^1' focus=off follow=off
+    bspc rule -a icecat -o desktop='^1' split_dir=west focus=off follow=off
     bspc rule -a Alacritty -o desktop='^1' split_dir=east focus=off
 fi
 
