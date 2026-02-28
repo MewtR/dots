@@ -22,9 +22,6 @@ set sort = reverse-last-date
 set date_format = "%a %e %b %Y"
 set index_format = "%4C %Z %[%a %e %b %Y %H:%M] %-15.15L (%<l?%4l&%4c>) %s"
 
-# Can have the date in my local timezone here maybe
-# set pager_format = "-%Z- %C/%m: %-20.20n   %s%*  -- (%P)" # format of the status
-
 set tmp_dir = ~/tmp/neomutt
 
 # Check for all subscribed IMAP folders ( as if all were added with a mailboxes line)
@@ -32,3 +29,5 @@ set imap_check_subscribed
 
 # Don't add a '+' at the beginning of wrapped lines
 set markers = no
+
+set display_filter=~/.config/neomutt/timezone_convert.sh
