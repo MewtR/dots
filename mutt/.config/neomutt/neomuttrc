@@ -8,5 +8,4 @@ set folder=~/Documents/Mail
 source ~/.config/neomutt/settings
 source ~/.config/neomutt/mappings
 
-# Accounts
-# source ~/.config/neomutt/accounts/main
+folder-hook . 'push <first-entry>'
