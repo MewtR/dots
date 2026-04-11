@@ -36,23 +36,21 @@ if [[ "$(hostname)" == "petalchaser" ]]; then
     bspc config presel_feedback_color "#6272a4"
 fi
 
-if [[ "$(hostname)" == "petalchaser" ]]; then
-    bspc rule -a icecat -o desktop='^1' split_dir=west focus=off follow=off
-    bspc rule -a Alacritty -o desktop='^1' split_dir=east focus=off
-else
-    bspc rule -a icecat -o desktop='^1' split_dir=west focus=off follow=off
-    bspc rule -a Alacritty -o desktop='^1' split_dir=east focus=off
-fi
+# Find classnames for each application by using xprop and clicking on the application's window
+# Look for second string in WM_CLASS
 
 #Common
+bspc rule -a icecat -o desktop='^1' split_dir=west focus=off follow=off
+bspc rule -a Alacritty -o desktop='^1' split_dir=east focus=off
 bspc rule -a Skype desktop='^2' focus=off 
 bspc rule -a VirtualBox\ Manager desktop='^3' focus=off 
 bspc rule -a VirtualBox\ Machine desktop='^2' focus=off # <- doesn't work for some reason
 bspc rule -a gazebo desktop='^2' focus=off 
 bspc rule -a discord desktop='^3' focus=off
 bspc rule -a Droidcam state=pseudo_tiled
-# Find classnames for each application by using xprop and clicking on the application's window
-# Look for second string in WM_CLASS
+bspc rule -a Spicy desktop='^3' focus=off # GTK+ client library for SPICE
+
+
 # My rules
 if [[ "$(hostname)" == "petalchaser" ]]; then
     #bspc rule -a steam monitor=DisplayPort-0 follow=off focus=off
