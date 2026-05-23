@@ -124,11 +124,17 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable('lua_ls')
 
 -- python
--- sudo pacman -S pyright
-vim.lsp.config('pyright', {
+local hasbasedpyright = os.execute("basedpyright --version")
+local python_lsp = 'pyright' -- sudo pacman -S pyright
+if hasbasedpyright == 0 then
+    -- status code is 0, which means no error, we do have basedpyright
+    -- You get this with 'pip install --upgrade basedpyright'
+    python_lsp = 'basedpyright'
+end
+vim.lsp.config(python_lsp, {
     capabilities = capabilities,
 })
-vim.lsp.enable('pyright')
+vim.lsp.enable(python_lsp)
 
 -- go
 -- sudo pacman -S gopls
