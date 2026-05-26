@@ -124,7 +124,7 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable('lua_ls')
 
 -- python
-local hasbasedpyright = os.execute("basedpyright --version")
+local hasbasedpyright = os.execute("basedpyright --version &> /dev/null")
 local python_lsp = 'pyright' -- sudo pacman -S pyright
 if hasbasedpyright == 0 then
     -- status code is 0, which means no error, we do have basedpyright
