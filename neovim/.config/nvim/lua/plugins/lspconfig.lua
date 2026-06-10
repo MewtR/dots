@@ -126,13 +126,31 @@ vim.lsp.enable('lua_ls')
 -- python
 local hasbasedpyright = os.execute("basedpyright --version &> /dev/null")
 local python_lsp = 'pyright' -- sudo pacman -S pyright
+local file_handle = assert(io.popen('python -c "import sys; print(sys.executable)"'))
+-- reads one line by default, skipping the end of line
+-- See 'file:read (···)' here: https://www.lua.org/manual/5.1/manual.html#5.7
+local python_path = file_handle:read()
+local python_lsp_settings = { python = { analysis = { autoSearchPaths = true, diagnosticMode = "openFilesOnly", useLibraryCodeForTypes = true } } }
 if hasbasedpyright == 0 then
     -- status code is 0, which means no error, we do have basedpyright
     -- You get this with 'pip install --upgrade basedpyright'
+    -- or 'uv pip install basedpyright' if using uv
     python_lsp = 'basedpyright'
+    python_lsp_settings = {
+        basedpyright = {
+                analysis = {
+                  autoSearchPaths = true,
+                  diagnosticMode = "openFilesOnly"
+                }
+        },
+        python = {
+            pythonPath = python_path
+        }
+    }
 end
 vim.lsp.config(python_lsp, {
     capabilities = capabilities,
+    settings = python_lsp_settings
 })
 vim.lsp.enable(python_lsp)
 
